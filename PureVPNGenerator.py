@@ -42,7 +42,7 @@ def generate_config_file(server,protocol):
         create_folder_if_nesscessary(os.path.join('generated_config_file'))
         with open(
                 os.path.join('generated_config_file', '-'.join([
-                    server['region'][0], server['country'][0], server['city'][0],
+                    server['region'][0].strip(), server['country'][0].strip(), server['city'][0].strip(),
                     protocol
                 ]) + '.ovpn'), 'w') as file:
             file.writelines(data)
